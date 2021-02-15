@@ -1,3 +1,19 @@
-.list {
-    
+.categories {
+    font-size: 2em;
+}
+
+.active-title {
+    text-align: center;
+    .title {
+        font-size: 3em;
+    }
+    .description {
+        font-size: 1.5em;
+    }
+}
+
+.sticky-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

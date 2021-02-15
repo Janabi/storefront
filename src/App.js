@@ -7,7 +7,6 @@ import Categories from './components/categories'
 function App() {
   return (
     <>
-      <Header />
       < Categories />
       <Footer />
     </>
