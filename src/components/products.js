@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import {Container, Grid} from '@material-ui/core';
+import './components.scss';
 
 const useStyles = makeStyles({
     root: {
@@ -37,8 +38,9 @@ function Product(props) {
     console.log("props>>>", props.data.myData.products)
     return(
         <>
+
             <Container>
-        
+              <h2 className="categories">Browse our Categories</h2>
             <Grid container spacing={4}>
                 {props.data.myData.categories.map((person, idx)=> {
                     // return <li key={idx} onClick={() => props.data.categories(person.name)}>{person.name} : {person.displayName}</li>
@@ -46,6 +48,11 @@ function Product(props) {
                         <Paper className={classez.paper} onClick={() => props.data.categories(person.name)}>{person.name}</Paper>
                         </Grid>
                 })}
+            </Grid>
+
+            <Grid className="active-title">
+                <h1 className="title">{props.data.myData.activeCategory}</h1>
+                <p className="description">Category Description Goes Here</p>
             </Grid>
             
             <Grid container spacing={4}>
@@ -64,7 +71,8 @@ function Product(props) {
                       </CardContent>
                     </CardActionArea>
                     <CardActions>
-                      <Button size="small" color="primary">
+                      {console.log("propzzzzz>>>>", props.data.cartItem)}
+                      <Button size="small" color="primary" onClick={()=>props.data.add(person.name)}>
                         Add To Chart
                       </Button>
                       <Button size="small" color="primary">

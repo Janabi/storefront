@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import './components.scss';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -24,7 +25,7 @@ export default function Footer() {
     const classes = useStyles();
     return (
         <>
-            <div className={classes.root}>
+            <div className={classes.root} className="sticky-footer">
                 <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>

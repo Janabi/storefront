@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## UML
 ![UML Lab 36](./uml-36.png)
+![UML Lab 36](./uml-37.png)
+
+## Deploy
+- [APP]()
 
 ## Available Scripts
 
