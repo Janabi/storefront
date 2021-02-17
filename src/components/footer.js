@@ -25,7 +25,7 @@ export default function Footer() {
     const classes = useStyles();
     return (
         <>
-            <div className={classes.root} className="sticky-footer">
+            <div className={classes.root} className="sticky-footer ">
                 <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
