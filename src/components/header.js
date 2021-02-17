@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -30,12 +30,17 @@ export default function Header(props) {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
+  
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  useEffect(() => {
+    console.log('inside useEfect');
+    props.cart.get();
+  }, ['']);
   
-  console.log("propzzzzzzzzzz>>>>>>>>>>>>>>", props.cart.cartItem)
+  console.log("propzzzzzzzzzz>>>>>>>>>>>>>>", props)
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -62,7 +67,7 @@ export default function Header(props) {
                 <Badge badgeContent={item.quantity} color="primary">
                   {item.name}
                 </Badge> 
-                <HighlightOffTwoToneIcon onClick={()=>props.cart.remove(item.name)}/>
+                <HighlightOffTwoToneIcon onClick={()=>props.cart.remove(item)}/>
               </MenuItem>
             )}
           </Menu>
